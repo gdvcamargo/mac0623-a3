@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MAC0623 — A3 Navegação em VR</title>
+  <link rel="stylesheet" href="./a3.css" />
+</head>
+<body>
+
+  <!-- HUD — visão do experimentador (a headset mostra o próprio HUD, preso à cabeça).
+       Mesmos ids do A2 onde o controle é o mesmo; src/hud.js (DomHud) liga os
+       eventos a estes ids exatos. -->
+  <div id="hud">
+    <label>Participante <input id="participantId" value="P01" size="4" /></label>
+    <label>Técnica
+      <select id="techniqueSelect">
+        <option value="1">1 — WIM (base)</option>
+        <option value="2">2 — Teleporte em arco</option>
+      </select>
+    </label>
+    <label title="Tentativas de treino rodam normalmente, mas não são registradas">
+      <input id="practiceToggle" type="checkbox" /> Treino
+    </label>
+    <span id="trialCount">Tentativa 1</span>
+    <button id="confirmBtn">Confirmar (Enter)</button>
+    <button id="downloadBtn">Baixar CSV</button>
+    <span id="orderHint"></span>
+    <span id="lastResult"></span>
+    <span id="status">—</span>
+  </div>
+
+  <div id="help">
+    <b>VR</b> — grip esquerdo: mostrar a miniatura · gatilho direito: agarrar o boneco (WIM)
+    ou mirar e soltar para pular (teleporte) · gatilho esquerdo: confirmar na beacon.<br />
+    <b>Desktop (dev)</b> — segurar Espaço: miniatura · botão esquerdo do mouse: agarrar o boneco /
+    mirar e soltar para pular · arrastar com o botão direito ou setas: olhar · Enter: confirmar.
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

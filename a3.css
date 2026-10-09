@@ -1,0 +1,88 @@
+/* ============================================================
+   MAC0623 — A3 Navigation in VR — styles (A2's HUD, plus a few fields)
+   ============================================================ */
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #111;
+}
+
+#hud {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(15, 15, 15, 0.88);
+  color: #eee;
+  font-size: 13px;
+  z-index: 10;
+  border-bottom: 1px solid #333;
+}
+
+#hud label { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+
+#hud input, #hud select {
+  font-size: 13px;
+  background: #222;
+  color: #eee;
+  border: 1px solid #444;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+
+#hud button {
+  font-size: 13px;
+  padding: 4px 12px;
+  cursor: pointer;
+  background: #2a5;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+}
+
+#hud button:hover { background: #3c6; }
+
+#downloadBtn { background: #457; }
+#downloadBtn:hover { background: #568; }
+
+#orderHint { color: #9ab; }
+#lastResult { color: #9f9; }
+
+#status {
+  margin-left: auto;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 3px;
+  background: #333;
+}
+
+#status.in-range { background: #274; color: #9f9; }
+#status.in-vr { outline: 1px solid #58f; }
+
+/* ---- Help caption (bottom-left) ---- */
+
+/* Bottom-right: the desktop miniature sits at the lower left of the view and
+   the VR button at the bottom centre. */
+#help {
+  position: fixed;
+  bottom: 8px; right: 14px;
+  color: #eee;
+  background: rgba(15, 15, 15, 0.6);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 10;
+  max-width: 480px;
+  line-height: 1.5;
+  pointer-events: none;
+}
+
+/* ---- three.js canvas ---- */
+
+canvas { display: block; }
